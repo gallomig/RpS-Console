@@ -2,11 +2,14 @@
 //add cancel function
 
 // Random Num for getComputerChoice function
-let randomNumber = Math.floor(Math.random() * 3) + 1;
+//let randomNumber = Math.floor(Math.random() * 3) + 1;
 
 // Computer makes a choice
 function getComputerChoice() {
+    let randomNumber = Math.floor(Math.random() * 3) + 1;
     let cC;
+    console.log(randomNumber);
+    
     if (randomNumber === 1) {
         alert("Computer picked Rock");
         return cC = 1;
@@ -23,15 +26,17 @@ function getComputerChoice() {
 function getPlayerChoice() {
     let pC;
     let playChoice = prompt("Player One, Enter Rock, Paper or Scissors: ");
-    if (playChoice === "Rock") {
+    if (playChoice === "Rock" || playChoice === "rock") {
         alert("You picked Rock");
         return pC = 1;
-    } else if (playChoice === "Paper") {
+    } else if (playChoice === "Paper" || playChoice === "paper") {
         alert("You picked Paper");
         return pC = 2;
-    } else if (playChoice === "Scissors") {
+    } else if (playChoice === "Scissors" || playChoice === "scissors") {
         alert("You picked Scissors");
         return pC = 3;
+    } else if (playChoice === "" || playChoice === null) {
+        alert("Canceled")
     } else {
         alert("Wrong Input");
     }
